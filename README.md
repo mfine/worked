@@ -5,21 +5,21 @@ Frontend around QC.
 ### Installing
 
 ```bash
-# createdb worked
-# bundle exec sequel -m db/migrations postgres:://localhost/worked
+$ createdb worked
+$ bundle exec sequel -m db/migrations postgres:://localhost/worked
 ```
 
 ### Running
 
 ```bash
-# cp sample.env .env
-# foreman start
+$ cp sample.env .env
+$ foreman start
 ```
 
 ### Usage
 
 ```bash
-# foreman start
+$ foreman start
 21:47:30 api.1    | started with pid 39140
 21:47:30 worker.1 | started with pid 39141
 21:47:31 api.1    | file=api fn=run app=worked task=api
@@ -31,7 +31,7 @@ Frontend around QC.
 ```
 
 ```bash
-# curl -i -X POST -d '{"do": "something"}' http://localhost:5000/work
+$ curl -i -X POST -d '{"do": "something"}' http://localhost:5000/work
 HTTP/1.1 200 OK
 Date: Wed, 22 Aug 2012 04:47:44 GMT
 Status: 200 OK
@@ -49,7 +49,7 @@ Content-Length: 0
 ```
 
 ```bash
-# curl -i -X POST -d '{"do": "something_else"}' http://localhost:5000/work
+$ curl -i -X POST -d '{"do": "something_else"}' http://localhost:5000/work
 HTTP/1.1 200 OK
 Date: Wed, 22 Aug 2012 04:47:53 GMT
 Status: 200 OK
