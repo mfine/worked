@@ -1,10 +1,35 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    kgio (2.7.4)
+    pg (0.14.0)
     press (0.7)
+    queue_classic (2.0.1)
+      pg (~> 0.14.0)
+      scrolls (~> 0.2.1)
+    rack (1.4.1)
+    rack-protection (1.2.0)
+      rack
+    raindrops (0.9.0)
+    scrolls (0.2.1)
+    sequel (3.38.0)
+    sinatra (1.3.2)
+      rack (~> 1.3, >= 1.3.6)
+      rack-protection (~> 1.2)
+      tilt (~> 1.3, >= 1.3.3)
+    tilt (1.3.3)
+    unicorn (4.3.1)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  pg
   press
+  queue_classic (~> 2)
+  sequel
+  sinatra
+  unicorn

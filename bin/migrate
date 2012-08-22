@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+`sequel -m #{File.expand_path(File.join(Dir.getwd, "db/migrations"))} #{ENV['DATABASE_URL']}`
