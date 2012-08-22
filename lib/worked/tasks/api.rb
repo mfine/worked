@@ -5,6 +5,7 @@ require "unicorn"
 require "queue_classic"
 require "worked/error"
 require "worked/conf"
+require "worked/press_logger"
 require "worked/endpoints/api"
 
 module Worked
@@ -13,7 +14,7 @@ module Worked
       extend Press
 
       def self.server
-        @server ||= Unicorn::HttpServer.new(Endpoints::Api, listeners: ["0.0.0.0:#{Conf.port}"])
+        @server ||= Unicorn::HttpServer.new(Endpoints::Api, listeners: ["0.0.0.0:#{Conf.port}"], logger: PressLogger.new("api"))
       end
 
       def self.run
